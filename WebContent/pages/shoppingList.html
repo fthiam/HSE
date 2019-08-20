@@ -1,0 +1,112 @@
+<html>
+<head>
+
+</head>
+
+<body>
+	<div class="jumbotron text-center" id="PageIntro">
+	<a id="" href= 'index.html#shoppingListsSelection?groupId={{groupId}}'><b>Back to lists</b></a>
+		<h1 id="">{{shoppingListName}}</h1>
+		<br>
+		<h5>Current cost : {{currentCost}}, left to pay : {{leftToPay}}</h5>
+		<div class="container">
+			<table id="newItem" class="grid table table-bordered table-sortable">
+			<caption>Create new item :</caption>
+				<tbody>
+					<div class="form-group row" id="itemCreation">
+						<td><label id="ex1" for="ex1">Item name</label> <input
+							class="form-control" id="ex1" type="text" ng-model=newItemName required>
+						</td>
+						<td><label id="ex2" for="ex2">Description</label> <input
+							class="form-control" id="ex2" type="text"
+							ng-model=newItemDescription></td>
+						<td>
+						<br>
+							<button class="btn btn-primary" ng-click="addItem()">Create New Item</button>
+						</td>
+					</div>
+				</tbody>
+			</table>
+
+		</div>
+	</div>
+	<p><i>{{itemOperationState}}</i></p>
+	<div class="row">
+		<div class="table-responsive col-md-12">
+			<table id="todoItemList" class="grid table table-bordered table-sortable">
+				<caption>To Do</caption>
+				<thead>
+					<tr>
+						<th>Item ID</th>
+						<th>Name</th>
+						<th>Price</th>
+						<th>Description</th>
+						<th>Creation Date</th>
+						<th>Scope</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="item in shoppingListItemsTodo">
+						<td>{{item.id}}</td>
+						<td>{{item.name}}</td>
+						<td>{{item.price}}</td>
+						<td>{{item.description}}</td>
+						<td>{{item.date}}</td>
+						<td>{{item.itemOwners}} </td>
+						<td>
+						<button ng-click="updateItemMod(item.price, item.id)"
+								class="btn  btn-warning glyphicon ">Update</button>
+						</td>
+						<td>
+							<button ng-click="showBuyItemPrompt(item.id, item.name, item.price)"
+								class="btn btn-labeled btn-success glyphicon glyphicon-ok">Buy</button>
+						</td>
+					
+						<td>
+							<button ng-click="removeItemFunc(item.id)"
+								class="btn btn-primary">Delete</button>
+						</td>
+						
+					</tr>
+				</tbody>
+				<table id="doneItemList" class="grid table table-bordered table-sortable">
+					<caption>Done</caption>
+					<thead>
+						<tr>
+							<th>Item ID</th>
+							<th>Name</th>
+							<th>Price</th>
+							<th>Description</th>
+							<th>Date of purchase</th>
+							<th>Buyer Name</th>
+							<th>Scope</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="item in shoppingListItemsDone">
+							<td>{{item.id}}</td>
+							<td>{{item.name}}</td>
+							<td>{{item.price}}</td>
+							<td>{{item.description}}</td>
+							<td>{{item.date}}</td>
+							<td>{{item.buyer}}</td>
+							<td>{{item.itemOwners}}</td>
+							<td>
+								<button ng-click="resetItem(item.id)"
+									class="btn btn-labeled btn-success glyphicon glyphicon-ok" >Reset Item</button>
+							</td>
+		 
+							<td>
+								<button ng-click="removeItemFunc(item.id)"
+									class="btn btn-primary" id="itemModification">Delete</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</table>
+		</div>
+
+		<button ng-click="removeShoppingList()" class="btn btn-primary">Delete list</button>
+</body>
+
+</html>

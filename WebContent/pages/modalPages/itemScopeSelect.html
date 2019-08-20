@@ -1,0 +1,22 @@
+<div class="modal fade" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Select who this product concern</h4>
+      </div>
+      <div class="modal-body">
+     	 <div class="checkbox checkbox-info checkbox-circle">
+			<input id="everyoneBox" type="checkbox" ng-click="checkAllBoxes()"> <label for="everyoneBox">ALL</label>
+			<div ng-repeat="member in membersInGroup">
+				<input id={{member.id}} type="checkbox" ng-click="refreshMainBox()"> <label for={{member.id}}>{{member.name}}</label>
+			</div>
+		</div>
+   
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

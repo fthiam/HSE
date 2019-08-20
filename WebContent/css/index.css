@@ -1,0 +1,32 @@
+
+body {
+	color:black;
+	background-color:white;
+	background-image:url(../pictures/home.png);
+}
+
+
+#PageIntro
+{
+	margin-top: 40px;
+	background-color :#9490a9;
+}
+#corps
+{
+	margin-top: 80px;
+}
+
+#ngviewRedirection
+{
+	background-color:white;
+	border: 20px solid white;
+}
+#ngviewCont
+{
+	background-color:#080808;
+	border: 2px solid black;
+}
+
+#scopeCheckBoxes{
+	left: 30px;
+}

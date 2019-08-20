@@ -1,0 +1,57 @@
+<html>
+
+	<div class="jumbotron" id="PageIntro">
+	<h1 class="display-3">Create an account</h1>
+	<p class="lead">To create an account on HSE, you only need a mail adress!</p>
+		  <hr class="my-4">
+		
+	<div class="container" >
+        <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+        	<div class="panel panel-default">
+			 			<div class="panel-body">
+			    		<form role="form">
+			    			<div class="row">
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			                <input type="text" name="first_name" ng-model="first_name" required="required" class="form-control input-sm" placeholder="First Name">
+			    					</div>
+			    				</div>
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						<input type="text" name="last_name" ng-model="last_name" required="required" class="form-control input-sm" placeholder="Last Name">
+			    					</div>
+			    				</div>
+			    			</div>
+
+			    			<div class="form-group">
+			    				<input type="email" name="email" ng-model="email"  required="required" class="form-control input-sm" placeholder="Email Address">
+			    			</div>
+
+			    			<div class="row">
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						<input type="password" name="password" ng-model="password" required="required" class="form-control input-sm" placeholder="Password">
+			    					</div>
+			    				</div>
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						<input type="password" name="password_confirmation" required="required"  ng-model="passwordConf" class="form-control input-sm" placeholder="Confirm Password">
+			    					</div>
+			    				</div>
+			    			</div>
+			    			
+			    			<input ng-click="createAccount()" type="submit" value="Register" class="btn btn-primary">
+			    		
+			    		</form>
+			    		
+			    		{{createAccountStatus}}
+			    	</div>
+	    		</div>
+    		</div>
+    	</div>
+    </div>
+    </div>
+		
+
+</html>

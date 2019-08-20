@@ -1,0 +1,29 @@
+<div class="modal fade" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" ng-click="close()" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Set Price and Scope for this Item</h4>
+      </div>
+      <div class="modal-body">
+      	<b>Price :</b>
+      	<br>
+        <input type="number" ng-model="itemPrice">
+         <br>
+        <br>
+        <b>Scope :</b>
+     	 <div class="checkbox checkbox-info checkbox-circle" id ="scopeCheckBoxes">
+			<input id="everyoneBox" type="checkbox" ng-click="checkAllBoxes()"> <label for="everyoneBox">ALL</label>
+			<div ng-repeat="member in membersInGroup">
+				<input id={{member.id}} type="checkbox" ng-click="refreshMainBox()"> <label for={{member.id}}>{{member.name}}</label>
+			</div>
+		</div>
+   
+      </div>
+      <div class="modal-footer">
+        <button type="button" ng-click="updateItemInit(itemPrice)" class="btn btn-primary" data-dismiss="modal">Ok</button>
+        <button type="button" class="btn btn-default" ng-click="close()" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div> 

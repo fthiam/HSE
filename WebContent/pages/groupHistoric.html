@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<div class="jumbotron text-center" id="PageIntro">
+	<a id="" href= 'index.html#group?groupId={{groupID}}'><b>Back to group {{groupName}}</b></a>
+		<h1 id="">{{groupName}} history</h1>
+	</div>
+	<table id="historicList" class="grid table table-bordered table-sortable">
+		<caption>List of group transactions</caption>
+		<thead>
+			<tr>
+				<th>Transaction ID</th>
+				<th>Description</th>
+				<th>Date</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="transaction in groupHistory">
+				<td>{{transaction.id}}</td>
+				<td>{{transaction.description}}</td>
+				<td>{{transaction.date}}</td>
+			</tr>
+		</tbody>
+	</table>
+		<button ng-click="clearHistory()"
+								class="btn btn-primary">Clear History</button>
+</body>
+</html>

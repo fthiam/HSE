@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<div class="jumbotron" id="PageIntro">
+		<a id="" href= 'index.html#group?groupId={{groupID}}'><b>Back to group {{groupName}}</b></a>
+		<h2 id="introductionPlacement">{{memberName}} in group {{groupName}} : Current shopping lists</h2>
+		<br>
+		
+		<form method="post" class="form-inline">
+			<div class="form-group">
+				<div class="input-group">
+					<input type="text" ng-model="newListName" required="required"  placeholder="List Name" class="form-control"/>
+					<button ng-click="createShoppingListFunc(newListName)" 	class="btn btn-primary">Create new List</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div>
+		<table id="activeShoppingLists" class="grid table table-bordered table-sortable" >
+				<tbody>
+					<caption>Active Shopping lists</caption>
+					<tr ng-repeat="shoppingList in activeShoppingList">
+						<td>
+							<a href='index.html#shoppingList?shoppingListId={{shoppingList.id}}
+															 &shoppingListName={{shoppingList.name}}&groupId={{groupID}}'
+							class="list-group-item list-group-item-info">
+	
+							<b>{{shoppingList.name}}</b>
+							</a>
+						</td>
+						<td>
+							 Previsions : {{shoppingList.leftToBuy}}<br>
+							 Total cost : {{shoppingList.totalPurshased}}
+						</td>
+						<td>
+							<button class="btn btn-primary"
+							ng-click="archiveShoppingListFunc(shoppingList.id, shoppingList.name)">Archive</button>
+						</td>
+					</tr>
+				</tbody>
+				
+			</table>
+			<table  id="archiveShoppingLists" class="grid table table-bordered table-sortable">
+				<tbody>
+					<caption>Archive Shopping lists</caption>
+					<tr ng-repeat="shoppingList in archiveShoppingList">
+						<td>
+							<a href='index.html#shoppingList?shoppingListId={{shoppingList.id}}
+																 &shoppingListName={{shoppingList.name}}&groupId={{groupID}}'
+							class="list-group-item list-group-item-warning">
+		
+							<b>{{shoppingList.name}}</b></a>
+						</td>
+						<td>
+							Was archive on {{shoppingList.date}} <br> Total cost : {{shoppingList.totalPurshased}}
+						</td>
+						<td>
+							<button class="btn btn-primary"
+							ng-click="makeNewListFromArchive(shoppingList.id, shoppingList.name)">Make new list from Archive</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+	</div>
+</body>
+</html>

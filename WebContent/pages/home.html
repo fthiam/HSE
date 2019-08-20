@@ -1,0 +1,35 @@
+<html>
+	<head>	
+	</head>
+	<body>
+	
+		<div class="jumbotron" id="PageIntro">	
+			<h3 id="homepagePlacement">{{memberName}}'s home </h3>
+			{{errorStatus}}
+			<br/>
+			<button ng-click="showNewGroupModal()" type="button" class="btn btn-primary">Create new group </button>
+	    </div>
+	    
+	    <br/>
+			<div class="list-groups" id="groups">
+				<li class="list-group-item active">Your groups :</li>
+				<div ng-repeat="group in groups">
+					<a href= 'index.html#group?groupId={{group.id}}' class="list-group-item list-group-item-action">{{group.name}}</a>		
+				</div>
+			</div>
+			
+			<div class="list-groups-invitation" id="invitations">
+				<li class="list-group-item active" >Your invitations to groups : </li>
+				<div ng-repeat="invitation in groupsInvitations">
+					<a class="list-group-item list-group-item-action">
+					
+					{{invitation.groupName}},
+					Invited by {{invitation.memberOriginName}} : <br>
+					
+                	<button ng-click="acceptInvitationFunc(invitation.id)" class="btn btn-labeled btn-success glyphicon glyphicon-ok" >  Accept</button>	
+					<button ng-click="declineInvitationFunc(invitation.id)" class="btn btn-labeled btn-danger glyphicon glyphicon-remove"></i></span>Decline</button>
+					</a>	
+				</div>
+			</div>
+    </body>
+</html> 

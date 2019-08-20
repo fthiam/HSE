@@ -1,0 +1,22 @@
+<div class="modal fade" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Transfer from : {{memberName}}</h4>
+      </div>
+      <div class="modal-body">
+       <li class="list-group-item active">Other members in this group :</li>
+			<div ng-repeat="memberInGroup in otherMembersInGroup">
+				<div class="list-group-item list-group-item-action">{{memberInGroup.name}}, balance of {{memberInGroup.balance}}
+					<input type="number" ng-model="value">
+					<button type="button" ng-click="transferMoney(value,memberInGroup.id)" class="btn btn-primary" data-dismiss="modal">I did this transfer</button>
+					</div>	
+			</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
