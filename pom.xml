@@ -1,56 +1,51 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>HomeSharingExpenses</groupId>
-  <url>http://www.eclipse.org/eclipselink/</url>
-  <artifactId>HomeSharingExpenses</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
-  <properties>
-  <eclipselink.version>2.5.0</eclipselink.version>
-  </properties>
-  
-  <build>
-    <sourceDirectory>src</sourceDirectory>
-    
-     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-war-plugin</artifactId>
-        <configuration>
-          <failOnMissingWebXml>false</failOnMissingWebXml>
-        </configuration>
-      </plugin>
-    </plugins>
-	
-	 <resources>
-      <resource>
-        <directory>D:\CNAM\Cours\GLG204\Application\HomeSharingExpenses\src\META-INF</directory>
-      </resource>
-    </resources>
-  </build>
-  
-  <repositories>
-  <repository>              
-          <id>central</id>
-          <name>Central</name>
-          <url>http://repo.maven.org/maven2</url>
-</repository>
-  	<repository>
-            <url>http://download.eclipse.org/rt/eclipselink/maven.repo/</url>
-            <id>eclipselink</id>
-            <layout>default</layout>
-            <name>Repository for library Library[eclipselink]</name>
-	</repository>
-	
-	<repository>
-			<id>objectdb</id>
-			<name>ObjectDB Repository</name>
-			<url>http://m2.objectdb.com</url>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>HomeSharingExpenses</groupId>
+	<url>http://www.eclipse.org/eclipselink/</url>
+	<artifactId>HomeSharingExpenses</artifactId>
+	<version>1.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<properties>
+		<eclipselink.version>2.5.0</eclipselink.version>
+	</properties>
+
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+		</plugins>
+
+		<resources>
+			<resource>
+				<directory>../src/META-INF</directory>
+			</resource>
+		</resources>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>central</id>
+			<name>Central</name>
+			<url>http://repo.maven.org/maven2</url>
 		</repository>
-		
-  </repositories>	
-  
-  	<dependencies>
+		<repository>
+			<url>http://download.eclipse.org/rt/eclipselink/maven.repo/</url>
+			<id>eclipselink</id>
+			<layout>default</layout>
+			<name>Repository for library Library[eclipselink]</name>
+		</repository>
+
+	</repositories>
+
+	<dependencies>
 		<dependency>
 			<groupId>asm</groupId>
 			<artifactId>asm</artifactId>
@@ -64,12 +59,12 @@
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
-			<version>20140107</version>
+			<version>20230618</version>
 		</dependency>
-        <dependency>
-    		<groupId>com.sun.jersey</groupId>
-    		<artifactId>jersey-json</artifactId>
-    		<version>1.8</version>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-json</artifactId>
+			<version>1.8</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
@@ -81,24 +76,20 @@
 			<artifactId>jersey-core</artifactId>
 			<version>1.19</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.eclipse.persistence</groupId>
 			<artifactId>javax.persistence</artifactId>
 			<version>2.1.0</version>
 		</dependency>
-		
-		<dependency>
-            <groupId>org.eclipse.persistence</groupId>
-            <artifactId>eclipselink</artifactId>
-            <version>2.5.0</version>
-        </dependency>
 
 		<dependency>
-			<groupId>com.objectdb</groupId>
-			<artifactId>objectdb</artifactId>
-			<version>2.6.9</version>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>eclipselink</artifactId>
+			<version>2.5.0</version>
 		</dependency>
+
+
 
 		<dependency>
 			<groupId>javax.transaction</groupId>
@@ -118,18 +109,18 @@
 			<artifactId>gson</artifactId>
 			<version>2.8.9</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.28</version>
 		</dependency>
-		
+
 		<dependency>
-    		<groupId>javax.servlet</groupId>
-    		<artifactId>servlet-api</artifactId>
-    		<version>2.5</version>
-    		<scope>provided</scope>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
 		</dependency>
 
 	</dependencies>
